@@ -54,6 +54,7 @@ import {
   TmInSpan,
   TmInSubCon,
 } from "./Apply.elements";
+import { URL } from "../../App";
 
 const Apply = () => {
   const [isMasterOneVisible, setIsMasterOneVisible] = useState(true);
