@@ -68,8 +68,8 @@ const Products = ({ cat, filters, sort }) => {
       try {
         const response = await axios.get(
           cat
-            ? `http://localhost:8000/api/products?category=${cat}`
-            : "http://localhost:8000/api/products"
+            ? `${process.env.React_APP_SERVER_URL}/products?category=${cat}`
+            : `${process.env.React_APP_SERVER_URL}/products`
         ); // Adjust the URL to match your API endpoint
 
         // Assuming the 'createdAt' field exists and is a Date string.
