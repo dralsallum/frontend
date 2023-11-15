@@ -54,7 +54,6 @@ import {
   TmInSpan,
   TmInSubCon,
 } from "./Apply.elements";
-import { URL } from "../../App";
 
 const Apply = () => {
   const [isMasterOneVisible, setIsMasterOneVisible] = useState(true);
@@ -109,7 +108,7 @@ const Apply = () => {
 
     try {
       // Make the API call to submit the application
-      const response = await fetch(`${URL}/api/applies`, {
+      const response = await fetch("http://localhost:8000/api/applies", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

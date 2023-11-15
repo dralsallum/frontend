@@ -50,7 +50,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
-import { URL } from "../../App";
 
 const Products = ({ cat, filters, sort }) => {
   const [products, setProducts] = useState([]);
@@ -68,7 +67,9 @@ const Products = ({ cat, filters, sort }) => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          cat ? `${URL}/api/products?category=${cat}` : `${URL}/api/products`
+          cat
+            ? `http://localhost:8000/api/products?category=${cat}`
+            : "http://localhost:8000/api/products"
         ); // Adjust the URL to match your API endpoint
 
         // Assuming the 'createdAt' field exists and is a Date string.
