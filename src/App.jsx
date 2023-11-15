@@ -12,8 +12,6 @@ import SignUp from "./pages/SignUp";
 import Upload from "./pages/Upload";
 import Items from "./pages/Items";
 
-export const URL = process.env.REACT_APP_SERVER_URL;
-
 const App = () => {
   const user = useSelector((state) => state.user.currentUser);
   return (

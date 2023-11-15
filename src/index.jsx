@@ -4,6 +4,7 @@ import App from "./App";
 import { Provider } from "react-redux";
 import { store, persistor } from "./redux/store";
 import { PersistGate } from "redux-persist/integration/react";
+export const URL = process.env.REACT_APP_SERVER_URL;
 
 ReactDOM.render(
   <Provider store={store}>
