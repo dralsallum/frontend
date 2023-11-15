@@ -108,16 +108,13 @@ const Apply = () => {
 
     try {
       // Make the API call to submit the application
-      const response = await fetch(
-        `${process.env.React_APP_SERVER_URL}/applies`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(applicationData),
-        }
-      );
+      const response = await fetch(`${URL}/api/applies`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(applicationData),
+      });
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
