@@ -1,7 +1,6 @@
 import axios from "axios";
-import URL from "./App";
 
-const BASE_URL = `${URL}/api/`;
+const BASE_URL = "https://mern-app-task-api-tso.onrender.com/api/";
 // const TOKEN =
 //   JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser
 //     .accessToken || "";

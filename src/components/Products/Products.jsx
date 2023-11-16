@@ -68,8 +68,8 @@ const Products = ({ cat, filters, sort }) => {
       try {
         const response = await axios.get(
           cat
-            ? `http://localhost:8000/api/products?category=${cat}`
-            : "http://localhost:8000/api/products"
+            ? `https://mern-app-task-api-tso.onrender.com/api/products?category=${cat}`
+            : "https://mern-app-task-api-tso.onrender.com/api/products"
         ); // Adjust the URL to match your API endpoint
 
         // Assuming the 'createdAt' field exists and is a Date string.
