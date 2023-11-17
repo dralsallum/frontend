@@ -109,7 +109,7 @@ const Apply = () => {
     try {
       // Make the API call to submit the application
       const response = await fetch(
-        "https://mern-app-task-api-tso.onrender.com/api/applies",
+        "https://agency-saudi-688c7ddad04b.herokuapp.com/api/applies",
         {
           method: "POST",
           headers: {
