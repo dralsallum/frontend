@@ -94,7 +94,7 @@ const Item = () => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/products/find/${productId}`
+          `https://agency-saudi-688c7ddad04b.herokuapp.com/api/products/find/${productId}`
         );
         setProduct(response.data);
       } catch (error) {
