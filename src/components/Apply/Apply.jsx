@@ -106,7 +106,7 @@ const Apply = () => {
 
     try {
       const uploadResponse = await axios.post(
-        "http://localhost:8000/api/upload",
+        "https://agency-saudi-688c7ddad04b.herokuapp.com/api/uploads",
         formData
       );
       const fileUrl = uploadResponse.data.fileUrl;
