@@ -370,6 +370,7 @@ export const SkTm = styled.div`
   line-height: 22px;
 
   @media screen and (max-width: 768px) {
+    font-size: 8px;
   }
 `;
 export const SkTmIc = styled.i`
@@ -389,6 +390,7 @@ export const SkTwPara = styled.p`
   margin-left: 3px;
 
   @media screen and (max-width: 768px) {
+    font: normal normal 700 16px Helvetica Now Text Regular;
   }
 `;
 export const SkTwPa = styled.p`
