@@ -373,7 +373,7 @@ const Item = () => {
             </IteTw>
           </IteConOn>
           <IteButMa>
-            <IteButAt href="/upload">قدم الان</IteButAt>
+            <IteButAt to={"/upload"}>قدم الان</IteButAt>
           </IteButMa>
           <div></div>
         </IteSubWra>

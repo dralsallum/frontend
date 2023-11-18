@@ -68,6 +68,7 @@ const Apply = () => {
   const [otherSpecialty, setOtherSpecialty] = useState("");
   const [disciplineOptions, setDisciplineOptions] = useState([]);
   const [specialtyOptions, setSpecialtyOptions] = useState([]);
+  const [fileUrl, setFileUrl] = useState([]);
   const [file, setFile] = useState(null);
   const navigate = useNavigate();
 
@@ -89,11 +90,31 @@ const Apply = () => {
     // ... other discipline to specialty mappings
   };
 
-  const submitApplication = async () => {
-    // Validate all the required fields
-    // ...
+  const handleFileChange = async (e) => {
+    const file = e.target.files[0];
+    if (!file) {
+      console.error("No file selected.");
+      return;
+    }
 
-    // Create the application object
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+      // Upload the file to Wasabi
+      const uploadResponse = await axios.post(
+        "http://localhost:8000/api/upload",
+        formData
+      );
+      const fileUrl = uploadResponse.data.fileUrl;
+      // Store the file URL in the state
+      setFileUrl(fileUrl);
+    } catch (error) {
+      console.error("Error uploading file:", error);
+    }
+  };
+
+  const submitApplication = async () => {
     const applicationData = {
       email,
       phone,
@@ -103,6 +124,7 @@ const Apply = () => {
       discipline,
       specialty,
       otherSpecialty,
+      fileUrl,
       // ... any other fields you have in your form ...
     };
 
@@ -395,7 +417,7 @@ const Apply = () => {
                                     id="resume"
                                     type="file"
                                     placeholder="resume"
-                                    onChange={(e) => setFile(e.target.files[0])}
+                                    onChange={handleFileChange}
                                   />
 
                                   <HiOnSp></HiOnSp>

@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 export const rotate = keyframes`
   from {
@@ -157,7 +158,7 @@ export const IteButMa = styled.div`
     max-width: 100%;
   }
 `;
-export const IteButAt = styled.a`
+export const IteButAt = styled(Link)`
   background-color: rgba(0, 111, 185);
   border-radius: 8px;
   color: rgba(255, 255, 255);

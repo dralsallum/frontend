@@ -12,7 +12,7 @@ import {
 import { sliderSettings } from "../../utils/common";
 import {
   FaUserMd,
-  FaStethoscope,
+  FaBriefcaseMedical,
   FaTooth,
   FaPhone,
   FaUserNurse,
@@ -21,7 +21,7 @@ import {
 
 const iconMapping = {
   الاطباء: FaUserMd,
-  العمال: FaStethoscope,
+  ادارة: FaBriefcaseMedical,
   تمريض: FaUserNurse,
   فني: FaMicroscope,
   اسنان: FaTooth,

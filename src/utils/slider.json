@@ -30,7 +30,8 @@
     "image": "./r3.png"
   },
   {
-    "name": "العمال",
+    "name": "ادارة",
+    "subName": "management",
     "price": "49",
     "image": "./r2.png"
   }
