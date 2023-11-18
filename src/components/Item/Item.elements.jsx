@@ -1,4 +1,22 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+export const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+export const StyledSpinner = styled(FontAwesomeIcon)`
+  animation: ${rotate} 1s linear infinite;
+  color: blue;
+  height: 34px;
+  width: 50px;
+  padding: 30px;
+`;
 
 export const IteWra = styled.div`
   display: block;

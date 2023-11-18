@@ -76,6 +76,7 @@ import {
   WoWra,
   FinWrap,
   Loading,
+  StyledSpinner,
 } from "./Item.elements";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -119,7 +120,7 @@ const Item = () => {
   if (!product) {
     return (
       <Loading>
-        <FontAwesomeIcon
+        <StyledSpinner
           icon={faSpinner}
           style={{
             color: "blue",

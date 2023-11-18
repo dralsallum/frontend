@@ -47,9 +47,11 @@ import {
   faFilter,
   faMapMarkerAlt,
   faHeart,
+  faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
+import { Loading, StyledSpinner } from "../Item/Item.elements";
 
 const Products = ({ cat, filters, sort }) => {
   const [products, setProducts] = useState([]);
@@ -85,6 +87,14 @@ const Products = ({ cat, filters, sort }) => {
 
     fetchProducts();
   }, [cat]);
+
+  if (products.length === 0) {
+    return (
+      <Loading>
+        <StyledSpinner icon={faSpinner} />
+      </Loading>
+    );
+  }
 
   return (
     <>
