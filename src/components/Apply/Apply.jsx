@@ -61,6 +61,7 @@ const Apply = () => {
   const [emailError, setEmailError] = useState("");
   const [phone, setPhone] = useState("");
   const [firstName, setFirstName] = useState("");
+  const [resume, setResume] = useState("");
   const [lastName, setLastName] = useState("");
   const [profession, setProfession] = useState("");
   const [discipline, setDiscipline] = useState("");
@@ -90,40 +91,6 @@ const Apply = () => {
     // ... other discipline to specialty mappings
   };
 
-  const handleFileChange = (event) => {
-    setFile(event.target.files[0]);
-  };
-
-  const uploadFile = async () => {
-    if (!file) {
-      alert("Please select a file first.");
-      return;
-    }
-
-    const formData = new FormData();
-    formData.append("resume", file);
-
-    try {
-      const response = await fetch(
-        "https://agency-saudi-688c7ddad04b.herokuapp.com/api/upload-resume",
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
-
-      if (response.ok) {
-        const result = await response.json();
-        alert("File uploaded successfully: " + result.fileUrl);
-      } else {
-        alert("File upload failed.");
-      }
-    } catch (error) {
-      console.error("Error uploading file:", error);
-      alert("Error uploading file.");
-    }
-  };
-
   const submitApplication = async () => {
     // Validate all the required fields
     // ...
@@ -138,6 +105,7 @@ const Apply = () => {
       discipline,
       specialty,
       otherSpecialty,
+      resume,
       // ... any other fields you have in your form ...
     };
 
@@ -427,13 +395,13 @@ const Apply = () => {
                                 <HiWraOn>
                                   <HiTwLa htmlFor="">السيرة *</HiTwLa>
                                   <HiOnIn
+                                    id="resume"
                                     type="file"
-                                    accept=".pdf"
-                                    onChange={handleFileChange}
+                                    placeholder="ايميل *"
+                                    value={resume}
+                                    onChange={handleEmailChange}
                                   />
-                                  <button onClick={uploadFile}>
-                                    Upload File
-                                  </button>
+
                                   <HiOnSp></HiOnSp>
                                 </HiWraOn>
                                 <HiWraOn>
