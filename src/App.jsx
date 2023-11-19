@@ -11,7 +11,6 @@ import Product from "./pages/Product";
 import SignUp from "./pages/SignUp";
 import Upload from "./pages/Upload";
 import Items from "./pages/Items";
-import Uploadd from "./pages/Uploadd";
 
 const App = () => {
   const user = useSelector((state) => state.user.currentUser);
@@ -22,7 +21,6 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/product/:category/:productId" element={<Items />} />
         <Route path="/upload" element={<Upload />} />
-        <Route path="/uploadd" element={<Uploadd />} />
         <Route path="/product/:category" element={<Product />} />
         <Route
           path="/signup"
