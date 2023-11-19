@@ -15,8 +15,8 @@ const Home = () => {
       <NavTech />
       <Main />
       <Slider />
-      <Article />
       <Options />
+      <Article />
       <Divider />
       <Footer />
     </>

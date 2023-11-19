@@ -132,9 +132,9 @@ const Article = () => {
 
   return (
     <ArWrapper>
-      <ArHead>احصل على مساحة ذهنية</ArHead>
+      <ArHead>استكشف كيف تستخدم خدماتنا</ArHead>
       <ArA>
-        <ArASp>ابدأ فترة التجربة المجانية</ArASp>
+        <ArASp>ابدا رحلتك مع اللميديكال</ArASp>
       </ArA>
       <ArContainerF>
         <ArSubConF>
@@ -154,7 +154,7 @@ const Article = () => {
                     <RowLiBut onClick={() => handleButtonClick("Meditate")}>
                       <RowSpan>
                         <RowReSpan></RowReSpan>
-                        الهدوء
+                        الموظف
                       </RowSpan>
                     </RowLiBut>
                   </RowLi>
@@ -164,7 +164,7 @@ const Article = () => {
                     <RowLiBut onClick={() => handleButtonClick("Sleep")}>
                       <RowSpan>
                         <RowReSpan></RowReSpan>
-                        النوم
+                        المستشفيات
                       </RowSpan>
                     </RowLiBut>
                   </RowLi>
@@ -177,7 +177,7 @@ const Article = () => {
                     >
                       <RowSpan>
                         <RowReSpan></RowReSpan>
-                        التحرك
+                        الخدمة
                       </RowSpan>
                     </RowLiBut>
                   </RowLi>
@@ -190,7 +190,7 @@ const Article = () => {
                     >
                       <RowSpan>
                         <RowReSpan></RowReSpan>
-                        التركيز
+                        الاسعار
                       </RowSpan>
                     </RowLiBut>
                   </RowLi>
@@ -200,7 +200,7 @@ const Article = () => {
                     <RowLiBut onClick={() => handleButtonClick("WakeUp")}>
                       <RowSpan>
                         <RowReSpan></RowReSpan>
-                        اليقظة
+                        التقديم
                       </RowSpan>
                     </RowLiBut>
                   </RowLi>

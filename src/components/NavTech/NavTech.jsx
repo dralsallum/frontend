@@ -85,11 +85,9 @@ const NavTech = () => {
             <NavContanier>
               <NavContanierLogoMain>
                 <NavContanierLogoMainSpan>
-                  <NavContanierLogoMainSvg>
-                    <Link to="/">
-                      <NavContanierLogoMainimg src={Logo} alt="" />
-                    </Link>
-                  </NavContanierLogoMainSvg>
+                  <Link to="/">
+                    <NavContanierLogoMainimg src={Logo} alt="" />
+                  </Link>
                 </NavContanierLogoMainSpan>
               </NavContanierLogoMain>
             </NavContanier>
