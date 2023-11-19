@@ -134,22 +134,6 @@ const Apply = () => {
     }
   };
 
-  const uploadResume = async (file) => {
-    const formData = new FormData();
-    formData.append("resume", file);
-
-    const response = await fetch("http://localhost:8000/api/upload-resume", {
-      method: "POST",
-      body: formData,
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    return response.json();
-  };
-
   const handleSelectChange = (event, setterFunction) => {
     setterFunction(event.target.value);
   };
