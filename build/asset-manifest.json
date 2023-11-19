@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.900c1a46.css",
+    "main.js": "/static/js/main.119a1aeb.js",
+    "static/media/medical.png": "/static/media/medical.a2003c72e35b288865a5.png",
+    "static/media/main-english-logo.png": "/static/media/main-english-logo.c837182752132999c875.png",
+    "static/media/MedLogo.png": "/static/media/MedLogo.bfff605d33168817860d.png",
+    "static/media/european-man-woman-casual-wear-standing-back-back-with-arms-crossed-isolated-colorful-wall_171337-51292.jpg": "/static/media/european-man-woman-casual-wear-standing-back-back-with-arms-crossed-isolated-colorful-wall_171337-51292.fbc6c44bd115397a62ca.jpg",
+    "static/media/physician.jpeg": "/static/media/physician.d5271f91ea2a9e2a4db6.jpeg",
+    "static/media/double.svg": "/static/media/double.0bcdaa6a1d77b7bf91021571ecfc04a2.svg",
+    "static/media/tabs_background_1.svg": "/static/media/tabs_background_1.0bcdaa6a1d77b7bf91021571ecfc04a2.svg",
+    "index.html": "/index.html",
+    "main.900c1a46.css.map": "/static/css/main.900c1a46.css.map",
+    "main.119a1aeb.js.map": "/static/js/main.119a1aeb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.900c1a46.css",
+    "static/js/main.119a1aeb.js"
+  ]
+}
