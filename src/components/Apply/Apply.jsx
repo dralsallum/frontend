@@ -69,6 +69,7 @@ const Apply = () => {
   const [disciplineOptions, setDisciplineOptions] = useState([]);
   const [specialtyOptions, setSpecialtyOptions] = useState([]);
   const [file, setFile] = useState(null);
+
   const navigate = useNavigate();
 
   const professionOptions = {
@@ -87,6 +88,40 @@ const Apply = () => {
     Neurology: ["Stroke Care", "Epilepsy"],
 
     // ... other discipline to specialty mappings
+  };
+
+  const handleFileChange = (event) => {
+    setFile(event.target.files[0]);
+  };
+
+  const uploadFile = async () => {
+    if (!file) {
+      alert("Please select a file first.");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("resume", file);
+
+    try {
+      const response = await fetch(
+        "https://agency-saudi-688c7ddad04b.herokuapp.com/api/upload-resume",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      if (response.ok) {
+        const result = await response.json();
+        alert("File uploaded successfully: " + result.fileUrl);
+      } else {
+        alert("File upload failed.");
+      }
+    } catch (error) {
+      console.error("Error uploading file:", error);
+      alert("Error uploading file.");
+    }
   };
 
   const submitApplication = async () => {
@@ -392,11 +427,13 @@ const Apply = () => {
                                 <HiWraOn>
                                   <HiTwLa htmlFor="">السيرة *</HiTwLa>
                                   <HiOnIn
-                                    id="resume"
                                     type="file"
-                                    placeholder="resume"
+                                    accept=".pdf"
+                                    onChange={handleFileChange}
                                   />
-                                  <button>upload now</button>
+                                  <button onClick={uploadFile}>
+                                    Upload File
+                                  </button>
                                   <HiOnSp></HiOnSp>
                                 </HiWraOn>
                                 <HiWraOn>
