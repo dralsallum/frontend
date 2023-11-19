@@ -89,6 +89,25 @@ const Apply = () => {
     // ... other discipline to specialty mappings
   };
 
+  const uploadResume = async (file) => {
+    const formData = new FormData();
+    formData.append("resume", file);
+
+    const response = await fetch(
+      "https://agency-saudi-688c7ddad04b.herokuapp.com/api/upload-resume",
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    return response.json();
+  };
+
   const submitApplication = async () => {
     // Validate all the required fields
     // ...
@@ -131,6 +150,21 @@ const Apply = () => {
     } catch (error) {
       // Handle any errors
       console.error("There was a problem with the fetch operation:", error);
+    }
+    try {
+      if (file) {
+        const uploadResponse = await uploadResume(file);
+        console.log("Upload response:", uploadResponse);
+        // Add the file URL to your application data if needed
+        applicationData.resumeUrl = uploadResponse.fileUrl;
+      }
+
+      // ... the rest of your application submission logic ...
+    } catch (error) {
+      console.error(
+        "There was a problem with the application submission:",
+        error
+      );
     }
   };
 
@@ -391,10 +425,9 @@ const Apply = () => {
                                 </HiWraOn>
                                 <HiWraOn>
                                   <HiTwLa htmlFor="">السيرة *</HiTwLa>
-                                  <HiOnIn
+                                  <input
                                     id="resume"
                                     type="file"
-                                    placeholder="resume"
                                     onChange={(e) => setFile(e.target.files[0])}
                                   />
 
