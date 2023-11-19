@@ -399,7 +399,10 @@ const Apply = () => {
                                     type="file"
                                     placeholder="ايميل *"
                                     value={resume}
-                                    onChange={handleEmailChange}
+                                    accept=".pdf"
+                                    onChange={(e) =>
+                                      handleInputChange(e, setResume)
+                                    }
                                   />
 
                                   <HiOnSp></HiOnSp>
