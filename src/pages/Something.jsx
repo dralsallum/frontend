@@ -49,9 +49,9 @@ const Something = () => {
         <button type="submit">Submit</button>
       </form>
 
-      {images.map((image) => (
-        <div key={image}>
-          <img src={image}></img>
+      {images.map((image, index) => (
+        <div key={image || index}>
+          <img src={image} alt={`Uploaded ${index}`}></img>
         </div>
       ))}
     </div>
