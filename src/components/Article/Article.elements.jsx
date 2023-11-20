@@ -47,9 +47,11 @@ export const ArContainerFPara = styled.p`
 export const ArContainerS = styled.div`
   order: 1;
   flex: 1;
+
   @media screen and (max-width: 768px) {
     max-width: 350px;
     margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
     order: 2;
   }
 `;
