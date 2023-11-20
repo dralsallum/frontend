@@ -91,49 +91,6 @@ const Apply = () => {
     // ... other discipline to specialty mappings
   };
 
-  const handleFileChange = (e) => {
-    const selectedFile = e.target.files[0];
-    if (selectedFile && selectedFile.type === "application/pdf") {
-      setFile(selectedFile);
-    } else {
-      alert("Please select a PDF file.");
-    }
-  };
-
-  const uploadFileToAWS = async () => {
-    if (!file) {
-      alert("Please select a PDF file to upload.");
-      return;
-    }
-
-    // Creating a FormData object to send the file
-    const formData = new FormData();
-    formData.append("file", file);
-
-    try {
-      // Sending the file to your Express server
-      const response = await axios.post(
-        "https://agency-saudi-688c7ddad04b.herokuapp.com/api/upload",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
-
-      // Check response from your Express server
-      if (response.status !== 200) {
-        throw new Error(`Error: ${response.statusText}`);
-      }
-
-      console.log("File uploaded successfully");
-      // Additional logic after successful upload (e.g., storing the file URL in state)
-    } catch (error) {
-      console.error("Error uploading file:", error);
-    }
-  };
-
   const submitApplication = async () => {
     // Validate all the required fields
     // ...
@@ -440,15 +397,14 @@ const Apply = () => {
                                   <HiOnIn
                                     id="resume"
                                     type="file"
+                                    placeholder="ايميل *"
+                                    value={resume}
                                     accept=".pdf"
-                                    onChange={handleFileChange}
+                                    onChange={(e) =>
+                                      handleInputChange(e, setResume)
+                                    }
                                   />
-                                  <button
-                                    type="button"
-                                    onClick={uploadFileToAWS}
-                                  >
-                                    upload to aws
-                                  </button>
+                                  <button>upload to aws</button>
                                   <HiOnSp></HiOnSp>
                                 </HiWraOn>
                                 <HiWraOn>
