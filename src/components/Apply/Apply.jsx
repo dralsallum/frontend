@@ -54,6 +54,31 @@ import {
   TmInSpan,
   TmInSubCon,
 } from "./Apply.elements";
+import {
+  Loading,
+  LoadingBar,
+  LoadingBarContainer,
+} from "../Item/Item.elements";
+
+async function postImage({ image, description }) {
+  try {
+    const formData = new FormData();
+    formData.append("image", image);
+    formData.append("description", description);
+
+    const result = await axios.post(
+      "https://agency-saudi-688c7ddad04b.herokuapp.com/images",
+      formData,
+      {
+        headers: { "Content-Type": "multipart/form-data" },
+      }
+    );
+    return result.data;
+  } catch (error) {
+    console.error("Error posting image:", error);
+    throw error; // rethrow the error for further handling if necessary
+  }
+}
 
 const Apply = () => {
   const [isMasterOneVisible, setIsMasterOneVisible] = useState(true);
@@ -67,10 +92,12 @@ const Apply = () => {
   const [discipline, setDiscipline] = useState("");
   const [specialty, setSpecialty] = useState("");
   const [otherSpecialty, setOtherSpecialty] = useState("");
+  const [description, setDescription] = useState("");
+  const [images, setImages] = useState([]);
   const [disciplineOptions, setDisciplineOptions] = useState([]);
   const [specialtyOptions, setSpecialtyOptions] = useState([]);
   const [file, setFile] = useState(null);
-
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   const professionOptions = {
@@ -92,10 +119,6 @@ const Apply = () => {
   };
 
   const submitApplication = async () => {
-    // Validate all the required fields
-    // ...
-
-    // Create the application object
     const applicationData = {
       email,
       phone,
@@ -106,7 +129,6 @@ const Apply = () => {
       specialty,
       otherSpecialty,
       resume,
-      // ... any other fields you have in your form ...
     };
 
     try {
@@ -129,11 +151,13 @@ const Apply = () => {
       // Handle the response
       const result = await response.json();
       console.log(result);
-      // Maybe show a success message or redirect the user
-      navigate("/");
+
+      setIsLoading(false);
+      navigate("/main");
     } catch (error) {
       // Handle any errors
       console.error("There was a problem with the fetch operation:", error);
+      setIsLoading(false);
     }
   };
 
@@ -178,6 +202,17 @@ const Apply = () => {
       setSpecialtyOptions(disciplineOptionsMapping[discipline] || []);
     }
   }, [discipline]);
+
+  if (isLoading) {
+    // Show loading bar when the form is being submitted
+    return (
+      <Loading>
+        <LoadingBarContainer>
+          <LoadingBar />
+        </LoadingBarContainer>
+      </Loading>
+    );
+  }
 
   return (
     <>
@@ -390,21 +425,6 @@ const Apply = () => {
                                     <HiFiOp value="dentist">طبيب اسنان</HiFiOp>
                                     <HiFiOp value="language">فني</HiFiOp>
                                   </HiFiSel>
-                                  <HiOnSp></HiOnSp>
-                                </HiWraOn>
-                                <HiWraOn>
-                                  <HiTwLa htmlFor="">السيرة *</HiTwLa>
-                                  <HiOnIn
-                                    id="resume"
-                                    type="file"
-                                    placeholder="ايميل *"
-                                    value={resume}
-                                    accept=".pdf"
-                                    onChange={(e) =>
-                                      handleInputChange(e, setResume)
-                                    }
-                                  />
-                                  <button>upload to aws</button>
                                   <HiOnSp></HiOnSp>
                                 </HiWraOn>
                                 <HiWraOn>

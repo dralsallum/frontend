@@ -77,6 +77,8 @@ import {
   FinWrap,
   Loading,
   StyledSpinner,
+  LoadingBarContainer,
+  LoadingBar,
 } from "./Item.elements";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -120,15 +122,9 @@ const Item = () => {
   if (!product) {
     return (
       <Loading>
-        <StyledSpinner
-          icon={faSpinner}
-          style={{
-            color: "blue",
-            height: "34px",
-            width: "50px",
-            padding: "30px",
-          }}
-        />
+        <LoadingBarContainer>
+          <LoadingBar />
+        </LoadingBarContainer>
       </Loading>
     );
   }

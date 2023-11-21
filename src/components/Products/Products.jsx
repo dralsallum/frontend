@@ -51,7 +51,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
-import { Loading, StyledSpinner } from "../Item/Item.elements";
+import {
+  Loading,
+  LoadingBar,
+  LoadingBarContainer,
+  StyledSpinner,
+} from "../Item/Item.elements";
 
 const Products = ({ cat, filters, sort }) => {
   const [products, setProducts] = useState([]);
@@ -91,7 +96,9 @@ const Products = ({ cat, filters, sort }) => {
   if (products.length === 0) {
     return (
       <Loading>
-        <StyledSpinner icon={faSpinner} />
+        <LoadingBarContainer>
+          <LoadingBar />
+        </LoadingBarContainer>
       </Loading>
     );
   }

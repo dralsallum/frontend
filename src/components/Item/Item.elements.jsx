@@ -11,6 +11,36 @@ export const rotate = keyframes`
   }
 `;
 
+export const Loading = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  @media screen and (max-width: 768px) {
+  }
+`;
+
+export const LoadingBarContainer = styled.div`
+  width: 30%; // Full width container
+  height: 4px;
+  background-color: #ddd;
+  border-radius: 2px;
+  overflow: hidden;
+`;
+
+const fillAnimation = keyframes`
+  0% { width: 0%; }
+  100% { width: 100%; }
+`;
+
+export const LoadingBar = styled.div`
+  background-color: #3aa2da;
+  height: 100%;
+  width: 0%;
+  border-radius: 2px;
+  animation: ${fillAnimation} 2s ease-in-out forwards;
+`;
+
 export const StyledSpinner = styled(FontAwesomeIcon)`
   animation: ${rotate} 1s linear infinite;
   color: blue;
@@ -296,13 +326,7 @@ export const ItFiCon = styled.div`
   @media screen and (max-width: 768px) {
   }
 `;
-export const Loading = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media screen and (max-width: 768px) {
-  }
-`;
+
 export const ItFiWra = styled.div`
   display: block;
   margin-top: 16px;
