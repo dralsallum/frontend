@@ -1,10 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import {
-  QuestionChapterProgress,
-  QuestionChapterProgressContainer,
-  QuestionChapterProgressSpan,
+  ApConTw,
+  ApSubWrap,
+  ApWrap,
+  AqAra,
+  AqAraOne,
+  AqAraOnePa,
+  AqCon,
+  AqMain,
+  AqSec,
+  AqSubSec,
+  FileInput,
+  FileInputLabel,
+  FileUploadWrapper,
+  MainForm,
+  MainWr,
 } from "./Resume.elements";
+import { useNavigate } from "react-router-dom";
+import { Button } from "../../globalStyles";
+import {
+  Loading,
+  LoadingBar,
+  LoadingBarContainer,
+} from "../Item/Item.elements";
 
 async function postImage({ image, description }) {
   try {
@@ -30,37 +49,93 @@ const Resuem = () => {
   const [file, setFile] = useState();
   const [description, setDescription] = useState("");
   const [images, setImages] = useState([]);
+  const [fileName, setFileName] = useState("ارفق الملف");
+  const [isLoading, setIsLoading] = useState(false);
+  const [uploadSuccess, setUploadSuccess] = useState(false);
+  const navigate = useNavigate();
 
   const submit = async (event) => {
     event.preventDefault();
-    const result = await postImage({ image: file, description });
-    setImages([result.image, ...images]);
+    setIsLoading(true);
+
+    try {
+      const result = await postImage({ image: file, description });
+      setImages([result.image, ...images]);
+      setUploadSuccess(true);
+      setTimeout(() => navigate("/"), 2000); // Navigate after 3 seconds
+    } catch (error) {
+      console.error("Error posting image:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const fileSelected = (event) => {
     const file = event.target.files[0];
     setFile(file);
+    setFileName(file ? `Selected: ${file.name}` : "Upload PDF");
   };
 
-  return (
-    <div className="App">
-      <form onSubmit={submit}>
-        <label htmlFor="">upload resume</label>
-        <input onChange={fileSelected} type="file" accept="pdf/*"></input>
-        <input
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          type="text"
-        ></input>
-        <button type="submit">Submit</button>
-      </form>
+  if (isLoading) {
+    // Show loading bar during the upload
+    return (
+      <Loading>
+        <LoadingBarContainer>
+          <LoadingBar />
+        </LoadingBarContainer>
+      </Loading>
+    );
+  }
 
-      {images.map((image, index) => (
-        <div key={image || index}>
-          <img src={image} alt={`Uploaded ${index}`}></img>
-        </div>
-      ))}
-    </div>
+  if (uploadSuccess) {
+    return (
+      <div>
+        <p>Upload was a success! Redirecting...</p>
+      </div>
+    );
+  }
+
+  return (
+    <ApWrap>
+      <ApSubWrap>
+        <ApConTw>
+          <AqCon></AqCon>
+          <AqMain>
+            <AqSubSec>
+              <AqAra>
+                <AqAraOne>
+                  <AqAraOnePa>
+                    خُذ الخطوة الأولى لبدء مسيرتك المهنية الجديدة
+                  </AqAraOnePa>
+                  <MainWr>
+                    <MainForm onSubmit={submit}>
+                      <FileUploadWrapper>
+                        <FileInputLabel htmlFor="file-upload">
+                          {fileName}
+                        </FileInputLabel>
+                        <FileInput
+                          id="file-upload"
+                          type="file"
+                          accept="pdf/*"
+                          onChange={fileSelected}
+                        />
+                      </FileUploadWrapper>
+                      <Button type="submit">ارسل</Button>
+                    </MainForm>
+
+                    {images.map((image, index) => (
+                      <div key={image || index}>
+                        <img src={image} alt={`Uploaded ${index}`}></img>
+                      </div>
+                    ))}
+                  </MainWr>
+                </AqAraOne>
+              </AqAra>
+            </AqSubSec>
+          </AqMain>
+        </ApConTw>
+      </ApSubWrap>
+    </ApWrap>
   );
 };
 
