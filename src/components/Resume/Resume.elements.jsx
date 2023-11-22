@@ -115,7 +115,7 @@ export const AqMain = styled.div`
   @media screen and (max-width: 768px) {
     margin-left: 0px;
     margin-right: 0px;
-    margin-top: -140px;
+    margin-top: -200px;
     padding-right: 10px;
     padding-left: 10px;
   }
@@ -165,7 +165,7 @@ export const AqCon = styled.div`
   @media screen and (max-width: 768px) {
     height: 550px;
     align-self: center;
-    background-position: 50% 250px;
+    background-position: 50% 200px;
     background-image: url("https://www.amnhealthcare.com/contentassets/3b62b90845a64ba09601a5f67ce8cde4/oneapplysmall.png");
   }
 `;
@@ -182,6 +182,7 @@ export const AqAraOne = styled.div`
   padding-top: 15px;
 
   @media screen and (max-width: 768px) {
+    height: 180px;
     padding-left: 0;
     padding-right: 0;
   }
