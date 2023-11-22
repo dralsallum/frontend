@@ -105,7 +105,7 @@ const Resuem = () => {
               <AqAra>
                 <AqAraOne>
                   <AqAraOnePa>
-                    خُذ الخطوة الأولى لبدء مسيرتك المهنية الجديدة
+                    الخطوة الاخيرة ارفق ملف PDF لسيرتك الذاتية
                   </AqAraOnePa>
                   <MainWr>
                     <MainForm onSubmit={submit}>

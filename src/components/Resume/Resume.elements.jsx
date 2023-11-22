@@ -232,7 +232,7 @@ export const FileInputLabel = styled.label`
   padding: 8px 36px;
   text-align: center;
   width: 250px;
-  background-color: #006fb9;
+  background-color: #166b9b;
   color: white;
   border-radius: 4px;
   cursor: pointer;
