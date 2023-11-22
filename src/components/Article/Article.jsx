@@ -8,9 +8,9 @@ import {
   ArContainerSImg,
   ArSubContainerF,
   ArWrapper,
+  Button,
 } from "./Article.elements";
 import physician from "../../assets/arab.png";
-import { Button } from "../../globalStyles";
 
 const Article = () => {
   return (

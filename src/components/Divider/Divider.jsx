@@ -9,7 +9,7 @@ import {
   ArSubContainerF,
   ArWrapper,
 } from "./Divider.elements";
-import couple from "../../assets/european-man-woman-casual-wear-standing-back-back-with-arms-crossed-isolated-colorful-wall_171337-51292.jpg";
+import couple from "../../assets/smilling.webp";
 
 const Divider = () => {
   return (

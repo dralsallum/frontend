@@ -62,3 +62,26 @@ export const ArContainerSImg = styled.img`
   overflow-clip-margin: content-box;
   overflow: clip;
 `;
+
+export const Button = styled.button`
+  border-radius: 4px;
+  background: #166b9b;
+  white-space: nowrap;
+  padding: 10px 15px;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+
+  &:hover {
+    transition: all 0.3s ease-out;
+    background: #fff;
+    background: #003c69;
+  }
+
+  @media screen and (max-width: 960px) {
+    width: 100%;
+  }
+`;
