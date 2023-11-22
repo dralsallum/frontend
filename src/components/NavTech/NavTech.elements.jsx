@@ -12,7 +12,7 @@ export const NavHeader = styled.header`
 `;
 export const NavHeaderSub = styled.div`
   position: relative;
-  z-index: 1;
+  z-index: 998;
 `;
 export const NavWrapper = styled.nav`
   border-bottom: 1px solid rgb(218, 225, 234);
