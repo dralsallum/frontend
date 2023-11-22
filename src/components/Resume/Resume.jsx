@@ -122,12 +122,6 @@ const Resuem = () => {
                       </FileUploadWrapper>
                       <Button type="submit">ارسل</Button>
                     </MainForm>
-
-                    {images.map((image, index) => (
-                      <div key={image || index}>
-                        <img src={image} alt={`Uploaded ${index}`}></img>
-                      </div>
-                    ))}
                   </MainWr>
                 </AqAraOne>
               </AqAra>

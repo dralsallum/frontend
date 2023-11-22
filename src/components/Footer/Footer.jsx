@@ -54,9 +54,9 @@ const Footer = () => {
         </FooterLinksWrapper>
         <FooterLinksWrapper>
           <FooterLinksItems>
-            <FooterLinkTitle>الفيديوات</FooterLinkTitle>
-            <FooterLink to="/sign-up">كيف يعمل</FooterLink>
-            <FooterLink to="/">شهادة المستخدمين</FooterLink>
+            <FooterLinkTitle>الشروط والاحكام</FooterLinkTitle>
+            <FooterLink to="/policy">اطلع عليها</FooterLink>
+            <FooterLink to="/policy">شهادة المستخدمين</FooterLink>
           </FooterLinksItems>
           <FooterLinksItems>
             <FooterLinkTitle>السوشل ميديا</FooterLinkTitle>
@@ -78,7 +78,6 @@ const Footer = () => {
               <NavbarContainerImg src={Logo} />
             </Link>
           </NavLogo>
-
           <SocialIcons>
             <SocialIconLink href="/" target="_blank" aria-label="Instagram">
               <FaInstagram />
