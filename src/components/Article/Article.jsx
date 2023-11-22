@@ -17,9 +17,6 @@ const Article = () => {
     <ArWrapper>
       <ArContainerF>
         <ArSubContainerF>
-          <ArContainerFCon>
-            نحل أكبر التحديات في قوى العمل الصحية!
-          </ArContainerFCon>
           <ArContainerFHe>
             بحثك عن المواهب في مجال الرعاية الصحية أصبح سهلاً!
           </ArContainerFHe>

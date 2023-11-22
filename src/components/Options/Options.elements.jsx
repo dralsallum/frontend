@@ -52,7 +52,7 @@ export const ArA = styled.a`
   text-overflow: ellipsis;
   user-select: none;
   white-space: nowrap;
-  background: #0061ef;
+  background: #166b9b;
   border-color: transparent;
   border-radius: 2rem;
   color: #ffffff;
@@ -81,7 +81,7 @@ export const ArContainerF = styled.div`
   margin-right: auto;
   max-width: 100%;
   width: 100%;
-  padding: 0 0 5rem;
+  padding: 0 0 3rem;
   position: relative;
   @media screen and (max-width: 700px) {
   }
@@ -166,7 +166,7 @@ export const RowLiBut = styled.button`
   min-width: auto;
   overflow: visible;
   padding: 0.5rem;
-  background-color: #0161ef;
+  background-color: #166b9b;
   border-radius: 0.5rem;
   color: #fff;
   cursor: pointer;
@@ -180,7 +180,7 @@ export const RowLiBut = styled.button`
     transform 150ms cubic-bezier(0.32, 0.94, 0.6, 1);
   user-select: none;
   white-space: nowrap;
-  background: #0161ef;
+  background: #166b9b;
   border-color: transparent;
   opacity: 1;
 `;
@@ -224,7 +224,7 @@ export const ColAudSubBut = styled.button`
   text-overflow: ellipsis;
   user-select: none;
   white-space: nowrap;
-  background: #0161ef;
+  background: #166b9b;
   border-color: transparent;
   color: #ffffff;
   opacity: 1;
@@ -350,7 +350,7 @@ export const KmSubCon = styled.div`
   display: block;
   position: absolute;
   transition: transform 100ms ease-out;
-  background-color: #0161ef;
+  background-color: #166b9b;
   height: 0.5rem;
   right: 100%;
   transform: translate(50%) scale(1);

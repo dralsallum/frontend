@@ -142,7 +142,7 @@ export const MobileText = styled.div`
 
 export const Button = styled.button`
   border-radius: 4px;
-  background: #006fb9;
+  background: #166b9b;
   white-space: nowrap;
   padding: 10px 15px;
   color: #fff;

@@ -16,7 +16,6 @@ const Divider = () => {
     <ArWrapper>
       <ArContainerF>
         <ArSubContainerF>
-          <ArContainerFCon>صنع من محترفين</ArContainerFCon>
           <ArContainerFHe>اطباء</ArContainerFHe>
           <ArContainerFPara>
             نحن نوظف أكثر من 4000 طبيب وممارس متقدم سنويًا في فرص العمل المؤقتة

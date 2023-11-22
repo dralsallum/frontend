@@ -33,11 +33,12 @@ export const ArContainerFCon = styled.div`
   margin-bottom: 1rem;
 `;
 export const ArContainerFHe = styled.h3`
-  font-size: 1.725rem;
+  font-size: 1.7rem;
   font-weight: 800;
   margin-bottom: 1rem;
+  color: #166b9b;
   @media screen and (max-width: 700px) {
-    font-size: 1.125rem;
+    font-size: 1.5rem;
     line-height: 1.625rem;
   }
 `;
