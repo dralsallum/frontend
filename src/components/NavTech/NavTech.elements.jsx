@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const NavHeader = styled.header`
-  z-index: 9999;
+  z-index: 998;
   position: sticky;
   top: 0;
   left: 0;
@@ -65,7 +65,7 @@ export const NavContanierLogoMainSvg = styled.div`
 export const NavContanierLogoMainImg = styled.img`
   width: 150px;
   height: 150%;
-  z-index: 999;
+  z-index: 9999;
 `;
 
 export const NavContanierSec = styled.div`
@@ -255,13 +255,13 @@ export const NotWrap = styled.div`
   border: 1px solid #d6dee6;
   border-radius: 0.75rem;
   text-align: left;
-  z-index: 9999;
+  z-index: 998;
   box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.06);
   right: 0;
   pointer-events: auto;
 
   @media screen and (max-width: 50rem) {
-    margin-top: 4rem;
+    margin-top: 4.5rem;
     margin-right: 1rem;
     width: 21.25rem;
   }
