@@ -52,19 +52,11 @@ export const NavContanierLogoMain = styled.div`
   @media screen and (max-width: 50em) {
   }
 `;
-export const NavContanierLogoMainSpan = styled.span`
-  display: inline-block;
-  cursor: pointer;
-`;
-export const NavContanierLogoMainSvg = styled.div`
-  display: block;
-  width: 100%;
-  height: 100%;
-  fill: inherit;
-`;
+
 export const NavContanierLogoMainImg = styled.img`
   width: 150px;
   height: 150%;
+  padding-bottom: 0.6rem;
   z-index: 9999;
 `;
 
