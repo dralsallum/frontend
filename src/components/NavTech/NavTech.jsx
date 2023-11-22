@@ -5,8 +5,6 @@ import {
   NavContanierLogoMain,
   NavContanierLogoMainImg,
   NavContanierLogoMainSpan,
-  NavContanierLogoMainSvg,
-  NavContanierLogoMainimg,
   NavContanierSec,
   NavHeader,
   NavHeaderSub,
@@ -28,7 +26,7 @@ import {
   NotUl,
   NotWrap,
 } from "./NavTech.elements";
-import Logo from "../../assets/main-english-logo.png";
+import Logo from "../../assets/MedLogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faUserPlus } from "@fortawesome/free-solid-svg-icons";

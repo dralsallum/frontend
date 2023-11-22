@@ -75,7 +75,6 @@ export const NavContanierSec = styled.div`
   flex: 0 0 auto;
 
   @media screen and (max-width: 75em) {
-    display: none;
   }
 `;
 export const NavContainerThi = styled.div`
@@ -92,7 +91,6 @@ export const NavrightFir = styled.div`
   margin: 0 0.5rem;
 
   @media screen and (max-width: 50rem) {
-    display: none;
   }
 `;
 export const NavrightSec = styled.div`
@@ -148,7 +146,6 @@ export const NavrightThi = styled.div`
   position: relative;
   margin: 0 0.25rem;
   @media screen and (max-width: 31.25rem) {
-    display: none;
   }
 `;
 export const NavrightFour = styled.div`
@@ -167,7 +164,6 @@ export const NavrightFourSubContainer = styled.div``;
 export const NavrightSubContainer = styled.div`
   font-size: 0.875rem;
   display: inline-flex;
-  -webkit-box-align: center;
   align-items: center;
   cursor: pointer;
   padding: 0.5rem 0.625rem;
