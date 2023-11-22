@@ -36,7 +36,7 @@ export const ArContainerFHe = styled.h3`
   font-weight: 800;
   margin-bottom: 1rem;
   color: #166b9b;
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 768px) {
     font-size: 1.5rem;
     line-height: 1.625rem;
   }
@@ -47,7 +47,7 @@ export const ArContainerFPara = styled.p`
 export const ArContainerS = styled.div`
   order: 2;
   flex: 1;
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 768px) {
     max-width: 350px;
     margin-bottom: 1.5rem;
   }
