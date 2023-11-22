@@ -9,7 +9,7 @@ export const ArWrapper = styled.div`
   direction: rtl;
   padding: 0.2rem 1.4rem;
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 768px) {
     flex-direction: column;
   }
 `;
@@ -37,7 +37,7 @@ export const ArContainerFHe = styled.h3`
   font-weight: 800;
   margin-bottom: 1rem;
   color: #166b9b;
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 768px) {
     font-size: 1.5rem;
     line-height: 1.625rem;
   }
