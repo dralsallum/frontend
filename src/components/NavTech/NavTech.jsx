@@ -3,6 +3,7 @@ import {
   NavContainerThi,
   NavContanier,
   NavContanierLogoMain,
+  NavContanierLogoMainImg,
   NavContanierLogoMainSpan,
   NavContanierLogoMainSvg,
   NavContanierLogoMainimg,
@@ -86,7 +87,7 @@ const NavTech = () => {
               <NavContanierLogoMain>
                 <NavContanierLogoMainSpan>
                   <Link to="/">
-                    <NavContanierLogoMainimg src={Logo} alt="" />
+                    <NavContanierLogoMainImg src={Logo} alt="" />
                   </Link>
                 </NavContanierLogoMainSpan>
               </NavContanierLogoMain>

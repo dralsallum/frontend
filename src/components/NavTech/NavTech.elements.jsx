@@ -62,9 +62,10 @@ export const NavContanierLogoMainSvg = styled.div`
   height: 100%;
   fill: inherit;
 `;
-export const NavContanierLogoMainimg = styled.img`
+export const NavContanierLogoMainImg = styled.img`
   width: 150px;
   height: 150%;
+  z-index: 999;
 `;
 
 export const NavContanierSec = styled.div`
