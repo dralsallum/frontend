@@ -38,7 +38,7 @@ export const LoadingBar = styled.div`
   height: 100%;
   width: 0%;
   border-radius: 2px;
-  animation: ${fillAnimation} 2s ease-in-out forwards;
+  animation: ${fillAnimation} 4s ease-in-out forwards;
 `;
 
 export const StyledSpinner = styled(FontAwesomeIcon)`
