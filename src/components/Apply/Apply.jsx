@@ -100,6 +100,12 @@ const Apply = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (isLoading) {
+      window.scrollTo(0, 0); // Scrolls to the top of the page
+    }
+  }, [isLoading]);
+
   const professionOptions = {
     nursing: ["Clinical Nursing", "Surgical Nursing"],
     physician: ["Cardiology", "Neurology"],
