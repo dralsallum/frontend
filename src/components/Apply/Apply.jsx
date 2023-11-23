@@ -119,6 +119,7 @@ const Apply = () => {
   };
 
   const submitApplication = async () => {
+    setIsLoading(true);
     const applicationData = {
       email,
       phone,
@@ -204,7 +205,6 @@ const Apply = () => {
   }, [discipline]);
 
   if (isLoading) {
-    // Show loading bar when the form is being submitted
     return (
       <Loading>
         <LoadingBarContainer>
