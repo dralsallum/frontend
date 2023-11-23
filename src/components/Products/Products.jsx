@@ -11,6 +11,7 @@ import {
   ItemConFiv,
   ItemConFour,
   ItemConOne,
+  Button,
   ItemConSix,
   ItemConThr,
   ItemConThrLi,
@@ -19,6 +20,7 @@ import {
   ItemSa,
   ItemSat,
   ItemSubCon,
+  PigCon,
   ProCon,
   ProFilBut,
   ProFilCon,
@@ -60,6 +62,8 @@ import {
 
 const Products = ({ cat, filters, sort }) => {
   const [products, setProducts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [favorites, setFavorites] = useState({});
 
@@ -73,25 +77,36 @@ const Products = ({ cat, filters, sort }) => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(
-          cat
-            ? `https://agency-saudi-688c7ddad04b.herokuapp.com/api/products?category=${cat}`
-            : "https://agency-saudi-688c7ddad04b.herokuapp.com/api/products"
-        ); // Adjust the URL to match your API endpoint
+        let url = `https://agency-saudi-688c7ddad04b.herokuapp.com/api/products?page=${currentPage}`;
+        if (cat) {
+          url += `&category=${cat}`;
+        }
 
-        // Assuming the 'createdAt' field exists and is a Date string.
+        const response = await axios.get(url);
+        setProducts(response.data.products);
+        setTotalPages(response.data.totalPages);
         const sortedProducts = response.data.sort(
           (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
         );
-
-        setProducts(sortedProducts);
       } catch (error) {
         console.error("Failed to fetch products", error);
       }
     };
 
     fetchProducts();
-  }, [cat]);
+  }, [cat, currentPage]);
+
+  const renderPagination = () => {
+    return Array.from({ length: totalPages }, (_, index) => (
+      <Button
+        key={index + 1}
+        onClick={() => setCurrentPage(index + 1)}
+        disabled={currentPage === index + 1}
+      >
+        {index + 1}
+      </Button>
+    ));
+  };
 
   if (products.length === 0) {
     return (
@@ -220,12 +235,15 @@ const Products = ({ cat, filters, sort }) => {
                     />
                   </ItemButIc>
                 </ItemBut>
+
                 <ItemConSix></ItemConSix>
               </ItemSat>
             </ItemSa>
           </ItemSubCon>
         </ItemCon>
       ))}
+
+      <PigCon>{renderPagination()}</PigCon>
     </>
   );
 };

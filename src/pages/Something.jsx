@@ -1,8 +1,9 @@
-import { Resume } from "../components";
+import { NavTech, Resume } from "../components";
 
 const Something = () => {
   return (
     <>
+      <NavTech />
       <Resume />
     </>
   );

@@ -20,6 +20,39 @@ export const ProCon = styled.div`
   @media screen and (max-width: 768px) {
   }
 `;
+export const PigCon = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  @media screen and (max-width: 768px) {
+  }
+`;
+
+export const Button = styled.button`
+  border-radius: 12px;
+  background: #166b9b;
+  white-space: nowrap;
+  padding: 10px 15px;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+
+  &:hover {
+    transition: all 0.3s ease-out;
+    background: #fff;
+    background: #003c69;
+  }
+
+  @media screen and (max-width: 960px) {
+  }
+`;
 export const ProInpCon = styled.div`
   background: #fff 0 0 no-repeat padding-box;
   border-radius: 10px;
