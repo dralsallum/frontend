@@ -66,6 +66,8 @@ const Products = ({ cat, filters, sort }) => {
   const [totalPages, setTotalPages] = useState(0);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [favorites, setFavorites] = useState({});
+  const [searchQuery, setSearchQuery] = useState("");
+  const [totalProducts, setTotalProducts] = useState(0);
 
   const toggleFavorite = (productId) => {
     setFavorites((prevFavorites) => ({
@@ -78,38 +80,46 @@ const Products = ({ cat, filters, sort }) => {
     const fetchProducts = async () => {
       try {
         let url = `https://agency-saudi-688c7ddad04b.herokuapp.com/api/products?page=${currentPage}`;
-        // ... additional parameters if needed
+        if (cat) {
+          url += `&category=${cat}`;
+        }
+        if (searchQuery) {
+          // Include the search query in the API request
+          url += `&search=${searchQuery}`;
+        }
 
         const response = await axios.get(url);
-        const fetchedProducts = response.data.products;
-        const sortedProducts = fetchedProducts.sort(
-          (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
-        );
-        setProducts(sortedProducts); // set sorted products to state
+        let sortedProducts = response.data.products;
+        if (sortedProducts && Array.isArray(sortedProducts)) {
+          sortedProducts.sort(
+            (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+          );
+        }
+        setProducts(sortedProducts);
         setTotalPages(response.data.totalPages);
-        // ... other response handling
+        setTotalProducts(response.data.totalProducts);
       } catch (error) {
         console.error("Failed to fetch products", error);
       }
     };
 
     fetchProducts();
-    window.scrollTo(0, 0); // Scroll to the top of the page
-  }, [cat, currentPage]);
+  }, [cat, currentPage, searchQuery]);
 
   const renderPagination = () => {
-    return Array.from({ length: totalPages }, (_, index) => {
-      const pageNumber = index + 1;
-      return (
-        <Button
-          key={pageNumber}
-          onClick={() => setCurrentPage(pageNumber)}
-          isActive={currentPage === pageNumber}
-        >
-          {pageNumber}
-        </Button>
-      );
-    });
+    return Array.from({ length: totalPages }, (_, index) => (
+      <Button
+        key={index + 1}
+        onClick={() => setCurrentPage(index + 1)}
+        disabled={currentPage === index + 1}
+      >
+        {index + 1}
+      </Button>
+    ));
+  };
+
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
   };
 
   if (products.length === 0) {
@@ -127,7 +137,11 @@ const Products = ({ cat, filters, sort }) => {
       <ProWra>
         <ProCon>
           <ProInpCon>
-            <ProInp type="text" placeholder="ابحث عن وظيفة" />
+            <ProInp
+              type="text"
+              placeholder="ابحث عن وظيفة"
+              onChange={handleSearchChange}
+            />
             <ProInpBut>
               <i>
                 <FontAwesomeIcon
@@ -167,8 +181,9 @@ const Products = ({ cat, filters, sort }) => {
             <div></div>
             <ProMa>
               <ProMaHe>
-                Found <span></span> <ProMaSpan>3458</ProMaSpan> <span></span>
-                jobs
+                وجدنا <span></span> <ProMaSpan>{totalProducts}</ProMaSpan>
+                <span> </span>
+                وظائف لك
               </ProMaHe>
             </ProMa>
           </ProSuCon>

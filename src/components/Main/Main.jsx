@@ -14,32 +14,16 @@ import {
 import Medical from "../../assets/medical.png";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 const Main = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
-  const navigate = useNavigate();
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
 
-  // New function to handle the search form submission
   const handleSearchSubmit = async (e) => {
     e.preventDefault();
-    console.log("Search term:", searchTerm); // To check what's being sent
-    try {
-      const response = await axios.get(
-        `https://agency-saudi-688c7ddad04b.herokuapp.com/api/products?search=${searchTerm}`
-      );
-      console.log("API Response:", response.data); // To check what's being received
-      setSearchResults(response.data.products); // Assuming the response has a 'products' field
-      navigate(`/products/search?query=${searchTerm}`);
-    } catch (error) {
-      console.log("Error occurred:", error);
-    }
   };
 
   return (
