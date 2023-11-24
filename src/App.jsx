@@ -30,6 +30,8 @@ const App = () => {
           path="/signup"
           element={user ? <Navigate to="/" /> : <SignUp />}
         />
+        {/* Add this new route */}
+        <Route path="/products/search" element={<Product />} />
       </Routes>
     </Router>
   );

@@ -78,16 +78,16 @@ const Products = ({ cat, filters, sort }) => {
     const fetchProducts = async () => {
       try {
         let url = `https://agency-saudi-688c7ddad04b.herokuapp.com/api/products?page=${currentPage}`;
-        if (cat) {
-          url += `&category=${cat}`;
-        }
+        // ... additional parameters if needed
 
         const response = await axios.get(url);
-        setProducts(response.data.products);
-        setTotalPages(response.data.totalPages);
-        const sortedProducts = response.data.sort(
+        const fetchedProducts = response.data.products;
+        const sortedProducts = fetchedProducts.sort(
           (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
         );
+        setProducts(sortedProducts); // set sorted products to state
+        setTotalPages(response.data.totalPages);
+        // ... other response handling
       } catch (error) {
         console.error("Failed to fetch products", error);
       }
