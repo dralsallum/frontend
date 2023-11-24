@@ -94,18 +94,22 @@ const Products = ({ cat, filters, sort }) => {
     };
 
     fetchProducts();
+    window.scrollTo(0, 0); // Scroll to the top of the page
   }, [cat, currentPage]);
 
   const renderPagination = () => {
-    return Array.from({ length: totalPages }, (_, index) => (
-      <Button
-        key={index + 1}
-        onClick={() => setCurrentPage(index + 1)}
-        disabled={currentPage === index + 1}
-      >
-        {index + 1}
-      </Button>
-    ));
+    return Array.from({ length: totalPages }, (_, index) => {
+      const pageNumber = index + 1;
+      return (
+        <Button
+          key={pageNumber}
+          onClick={() => setCurrentPage(pageNumber)}
+          isActive={currentPage === pageNumber}
+        >
+          {pageNumber}
+        </Button>
+      );
+    });
   };
 
   if (products.length === 0) {
