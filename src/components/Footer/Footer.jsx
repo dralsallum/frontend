@@ -34,9 +34,7 @@ const Footer = () => {
         </FooterSubText>
         <Form>
           <FormInput name="email" type="email" placeholder="اكتب ايميلك" />
-          <Button fontBig style={{ backgroundColor: "#2946b6" }}>
-            اشترك
-          </Button>
+          <Button style={{ backgroundColor: "#2946b6" }}>اشترك</Button>
         </Form>
       </FooterSubscription>
       <FooterLinksContainer>

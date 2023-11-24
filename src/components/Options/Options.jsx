@@ -132,9 +132,8 @@ const Article = () => {
 
   return (
     <ArWrapper>
-      <ArHead>استكشف كيف تستخدم خدماتنا</ArHead>
       <ArA>
-        <ArASp>ابدا رحلتك مع اللميديكال</ArASp>
+        <ArASp>استكشف كيف تستخدم خدماتنا</ArASp>
       </ArA>
       <ArContainerF>
         <ArSubConF>
@@ -171,10 +170,7 @@ const Article = () => {
                 </RowLiCon>
                 <RowLiCon>
                   <RowLi>
-                    <RowLiBut
-                      RowLiBut
-                      onClick={() => handleButtonClick("Move")}
-                    >
+                    <RowLiBut onClick={() => handleButtonClick("Move")}>
                       <RowSpan>
                         <RowReSpan></RowReSpan>
                         الخدمة
@@ -184,10 +180,7 @@ const Article = () => {
                 </RowLiCon>
                 <RowLiCon>
                   <RowLi>
-                    <RowLiBut
-                      RowLiBut
-                      onClick={() => handleButtonClick("Focus")}
-                    >
+                    <RowLiBut onClick={() => handleButtonClick("Focus")}>
                       <RowSpan>
                         <RowReSpan></RowReSpan>
                         الاسعار

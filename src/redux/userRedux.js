@@ -62,25 +62,25 @@ export const userSlice = createSlice({
     },
     // Other reducers can be added here if needed
   },
-  extraReducers: {
-    // Handle registration
-    [register.pending]: (state) => {
-      state.isFetching = true;
-      state.isError = false;
-      state.isSuccess = false;
-    },
-    [register.fulfilled]: (state, action) => {
-      state.isFetching = false;
-      state.isSuccess = true;
-      state.currentUser = action.payload;
-      state.isError = false;
-      state.errorMessage = "";
-    },
-    [register.rejected]: (state, action) => {
-      state.isFetching = false;
-      state.isError = true;
-      state.errorMessage = action.payload;
-    },
+  extraReducers: (builder) => {
+    builder
+      .addCase(register.pending, (state) => {
+        state.isFetching = true;
+        state.isError = false;
+        state.isSuccess = false;
+      })
+      .addCase(register.fulfilled, (state, action) => {
+        state.isFetching = false;
+        state.isSuccess = true;
+        state.currentUser = action.payload;
+        state.isError = false;
+        state.errorMessage = "";
+      })
+      .addCase(register.rejected, (state, action) => {
+        state.isFetching = false;
+        state.isError = true;
+        state.errorMessage = action.payload;
+      });
   },
 });
 
