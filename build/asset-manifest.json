@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/static/css/main.900c1a46.css",
-    "main.js": "/static/js/main.c54aa2d2.js",
+    "main.js": "/static/js/main.17b31423.js",
     "static/media/medical.png": "/static/media/medical.a2003c72e35b288865a5.png",
     "static/media/arab.png": "/static/media/arab.6e68580b8476fbb0fd30.png",
     "static/media/main-english-logo.png": "/static/media/main-english-logo.c837182752132999c875.png",
-    "static/media/MedLogo.png": "/static/media/MedLogo.bfff605d33168817860d.png",
+    "static/media/MedLogoo.png": "/static/media/MedLogoo.9ef2bc55a9f53381f7a9.png",
     "static/media/smilling.webp": "/static/media/smilling.5b7cbea876e840e99b4d.webp",
     "static/media/double.svg": "/static/media/double.0bcdaa6a1d77b7bf91021571ecfc04a2.svg",
     "static/media/tabs_background_1.svg": "/static/media/tabs_background_1.0bcdaa6a1d77b7bf91021571ecfc04a2.svg",
     "index.html": "/index.html",
     "main.900c1a46.css.map": "/static/css/main.900c1a46.css.map",
-    "main.c54aa2d2.js.map": "/static/js/main.c54aa2d2.js.map"
+    "main.17b31423.js.map": "/static/js/main.17b31423.js.map"
   },
   "entrypoints": [
     "static/css/main.900c1a46.css",
-    "static/js/main.c54aa2d2.js"
+    "static/js/main.17b31423.js"
   ]
 }
