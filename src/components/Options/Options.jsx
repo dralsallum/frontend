@@ -101,19 +101,13 @@ const Article = () => {
         "loadedmetadata",
         handleLoadedMetadata
       );
+
       audioRef.current.removeEventListener("timeupdate", handleTimeUpdate);
-
-      // Set new audio source
       audioRef.current.src = slides[currentIndex].audioSrc;
-
-      // Reload the audio to apply new source
       audioRef.current.load();
-
-      // Add new event listeners
       audioRef.current.addEventListener("loadedmetadata", handleLoadedMetadata);
       audioRef.current.addEventListener("timeupdate", handleTimeUpdate);
 
-      // Reset audio if index changes
       return () => {
         if (audioRef.current) {
           audioRef.current.pause();
@@ -122,7 +116,7 @@ const Article = () => {
         setIsPlaying(false);
       };
     }
-  }, [currentIndex]); // Now depends on currentIndex
+  }, [currentIndex]);
 
   const formatTime = (timeInSeconds) => {
     const minutes = Math.floor(timeInSeconds / 60);
