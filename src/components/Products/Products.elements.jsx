@@ -43,6 +43,7 @@ export const Button = styled.button`
   border: none;
   cursor: pointer;
   text-align: center;
+    background: ${(props) => (props.isActive ? "#003c69" : "#166b9b")}
 
   &:hover {
     transition: all 0.3s ease-out;
