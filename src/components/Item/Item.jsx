@@ -266,11 +266,11 @@ const Item = () => {
                         <strong>أبرز الفرص</strong>
                         <AbHiUl>
                           <AbHiLi>
-                            الراتب الأساسي يصل إلى {product.minPrice} ألف دولار
+                            الراتب الأساسي يصل إلى {product.maxPrice} ألف دولار
                             مع الخبرة
                           </AbHiLi>
                           <AbHiLi>
-                            إمكانية الدخل السنوي تصل إلى {product.maxPrice} ألف
+                            إمكانية الدخل السنوي تصل إلى {product.minPrice} ألف
                             دولار
                           </AbHiLi>
                           <AbHiLi>فرصة لإدارة لوحة مرضاك الخاصة </AbHiLi>
