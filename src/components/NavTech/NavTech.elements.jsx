@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const NavHeader = styled.header`
+  direction: rtl;
   z-index: 998;
   position: sticky;
   top: 0;
@@ -71,7 +72,7 @@ export const NavContanierSec = styled.div`
   }
 `;
 export const NavContainerThi = styled.div`
-  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex: 0 0 auto;
   align-items: center;
@@ -239,22 +240,22 @@ export const NotWrap = styled.div`
   direction: rtl;
   cursor: default;
   margin-top: 5rem;
-  margin-right: 2rem;
+  margin-left: 2rem;
   width: 31.25rem;
   padding: 0;
   color: #252b2f;
   background-color: #fff;
   border: 1px solid #d6dee6;
   border-radius: 0.75rem;
-  text-align: left;
+  text-align: right;
   z-index: 998;
   box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.06);
-  right: 0;
+  left: 0;
   pointer-events: auto;
 
   @media screen and (max-width: 50rem) {
     margin-top: 4.5rem;
-    margin-right: 1rem;
+    margin-left: 1rem;
     width: 21.25rem;
   }
 `;
