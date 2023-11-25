@@ -144,7 +144,10 @@ const Article = () => {
               <RowLisCon>
                 <RowLiCon>
                   <RowLi>
-                    <RowLiBut onClick={() => handleButtonClick("Meditate")}>
+                    <RowLiBut
+                      onClick={() => handleButtonClick("Meditate")}
+                      isActive={currentIndex === buttonToSlideIndex["Meditate"]}
+                    >
                       <RowSpan>
                         <RowReSpan></RowReSpan>
                         الموظف
@@ -154,7 +157,10 @@ const Article = () => {
                 </RowLiCon>
                 <RowLiCon>
                   <RowLi>
-                    <RowLiBut onClick={() => handleButtonClick("Sleep")}>
+                    <RowLiBut
+                      onClick={() => handleButtonClick("Sleep")}
+                      isActive={currentIndex === buttonToSlideIndex["Sleep"]}
+                    >
                       <RowSpan>
                         <RowReSpan></RowReSpan>
                         المستشفيات
@@ -164,7 +170,10 @@ const Article = () => {
                 </RowLiCon>
                 <RowLiCon>
                   <RowLi>
-                    <RowLiBut onClick={() => handleButtonClick("Move")}>
+                    <RowLiBut
+                      onClick={() => handleButtonClick("Move")}
+                      isActive={currentIndex === buttonToSlideIndex["Move"]}
+                    >
                       <RowSpan>
                         <RowReSpan></RowReSpan>
                         الخدمة
@@ -174,7 +183,10 @@ const Article = () => {
                 </RowLiCon>
                 <RowLiCon>
                   <RowLi>
-                    <RowLiBut onClick={() => handleButtonClick("Focus")}>
+                    <RowLiBut
+                      onClick={() => handleButtonClick("Focus")}
+                      isActive={currentIndex === buttonToSlideIndex["Focus"]}
+                    >
                       <RowSpan>
                         <RowReSpan></RowReSpan>
                         الاسعار
@@ -184,7 +196,10 @@ const Article = () => {
                 </RowLiCon>
                 <RowLiCon>
                   <RowLi>
-                    <RowLiBut onClick={() => handleButtonClick("WakeUp")}>
+                    <RowLiBut
+                      onClick={() => handleButtonClick("WakeUp")}
+                      isActive={currentIndex === buttonToSlideIndex["WakeUp"]}
+                    >
                       <RowSpan>
                         <RowReSpan></RowReSpan>
                         التقديم
