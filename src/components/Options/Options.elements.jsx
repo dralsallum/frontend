@@ -235,7 +235,7 @@ export const ColAudSubBut = styled.button`
   font-size: 1.5rem;
   padding: calc((2.75rem - 1em) / 2);
   line-height: 1rem;
-  transition: color 150ms cubic-bezier(0.32, 0.94, 0.6, 1),
+  transition: color 150ms cubic-bezier(0.32, 0.94, 0.6, 1);
     background-color 150ms cubic-bezier(0.32, 0.94, 0.6, 1),
     border-color 150ms cubic-bezier(0.32, 0.94, 0.6, 1),
     box-shadow 150ms cubic-bezier(0.32, 0.94, 0.6, 1),
@@ -272,7 +272,7 @@ export const ExCon = styled.div`
 `;
 export const ExSubCon = styled.div`
   display: flex;
-  margin-right: 1rem;
+  margin-left: 1rem;
   align-items: center;
 `;
 export const ExSubSpan = styled.span`

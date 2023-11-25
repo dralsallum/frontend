@@ -216,13 +216,6 @@ const Article = () => {
                   ></ColAud>
                   <ColAudCon>
                     <ColAudSubCon>
-                      <ColAudSubBut onClick={handlePlayAudio}>
-                        <ColAudSubSpan>
-                          <ColAudSubSvg viewBox="0 0 24 24">
-                            <path fill="#ffffff" d="M8 5v14l11-7z" />
-                          </ColAudSubSvg>
-                        </ColAudSubSpan>
-                      </ColAudSubBut>
                       <ExCon>
                         <ExLab>{slides[currentIndex].label}</ExLab>
                         <ExSubCon>
@@ -242,6 +235,13 @@ const Article = () => {
                           <OldSpan>{formatTime(audioDuration)}</OldSpan>
                         </ExSubCon>
                       </ExCon>
+                      <ColAudSubBut onClick={handlePlayAudio}>
+                        <ColAudSubSpan>
+                          <ColAudSubSvg viewBox="0 0 24 24">
+                            <path fill="#ffffff" d="M8 5v14l11-7z" />
+                          </ColAudSubSvg>
+                        </ColAudSubSpan>
+                      </ColAudSubBut>
                     </ColAudSubCon>
                   </ColAudCon>
                 </ColAudConF>
