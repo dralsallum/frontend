@@ -247,7 +247,7 @@ export const ColSubConFCon = styled.div`
   flex: 0 0 100%;
   max-width: 100%;
   min-height: 100%;
-  padding: 3.5rem 1.25rem;
+  padding: 2.5rem 1.25rem;
   position: relative;
   width: 100%;
 `;
@@ -258,7 +258,7 @@ export const ColSubParaCon = styled.div`
   font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 1.625rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
   margin-left: auto;
   margin-right: auto;
   max-width: 100%;
