@@ -183,7 +183,7 @@ export const RowLiBut = styled.button`
   background: #166b9b;
   border-color: transparent;
   opacity: 1;
-  background: ${(props) => (props.isActive ? "#38393a" : "#166b9b")};
+  background: ${(props) => (props.isActive ? "#000" : "#166b9b")};
 `;
 export const ColConFCon = styled.div`
   display: flex;
