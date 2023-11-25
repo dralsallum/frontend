@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import {
   ArA,
   ArASp,
@@ -54,6 +54,14 @@ const buttonToSlideIndex = {
   WakeUp: 4,
 };
 
+const buttonsInfo = [
+  { label: "Meditate", title: "الموظف" },
+  { label: "Sleep", title: "المستشفيات" },
+  { label: "Move", title: "الخدمة" },
+  { label: "Focus", title: "الاسعار" },
+  { label: "WakeUp", title: "التقديم" },
+];
+
 const Article = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -76,23 +84,24 @@ const Article = () => {
     }
   };
 
-  const handleButtonClick = (buttonLabel) => {
+  const handleButtonClick = useCallback((buttonLabel) => {
     const newIndex = buttonToSlideIndex[buttonLabel];
     if (newIndex !== undefined) {
       setCurrentIndex(newIndex);
     }
-  };
+  }, []);
 
-  const handlePlayAudio = () => {
+  const handlePlayAudio = useCallback(() => {
     if (audioRef.current) {
       if (isPlaying) {
-        audioRef.current.pause(); // Pause if it's currently playing
+        audioRef.current.pause();
       } else {
-        audioRef.current.play(); // Play if it's currently paused
+        audioRef.current.play();
       }
-      setIsPlaying(!isPlaying); // Toggle the state
+      setIsPlaying(!isPlaying);
     }
-  };
+  }, [isPlaying]);
+
   useEffect(() => {
     if (audioRef.current) {
       // Remove old event listeners
@@ -123,6 +132,22 @@ const Article = () => {
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
 
+  const buttonComponents = buttonsInfo.map((button) => (
+    <RowLiCon key={button.label}>
+      <RowLi>
+        <RowLiBut
+          onClick={() => handleButtonClick(button.label)}
+          isActive={currentIndex === buttonToSlideIndex[button.label]}
+        >
+          <RowSpan>
+            <RowReSpan></RowReSpan>
+            {button.title}
+          </RowSpan>
+        </RowLiBut>
+      </RowLi>
+    </RowLiCon>
+  ));
+
   return (
     <ArWrapper>
       <ArA>
@@ -140,73 +165,7 @@ const Article = () => {
           </ArConFCon>
           <GoConFCon>
             <RowConFCon>
-              <RowLisCon>
-                <RowLiCon>
-                  <RowLi>
-                    <RowLiBut
-                      onClick={() => handleButtonClick("Meditate")}
-                      isActive={currentIndex === buttonToSlideIndex["Meditate"]}
-                    >
-                      <RowSpan>
-                        <RowReSpan></RowReSpan>
-                        الموظف
-                      </RowSpan>
-                    </RowLiBut>
-                  </RowLi>
-                </RowLiCon>
-                <RowLiCon>
-                  <RowLi>
-                    <RowLiBut
-                      onClick={() => handleButtonClick("Sleep")}
-                      isActive={currentIndex === buttonToSlideIndex["Sleep"]}
-                    >
-                      <RowSpan>
-                        <RowReSpan></RowReSpan>
-                        المستشفيات
-                      </RowSpan>
-                    </RowLiBut>
-                  </RowLi>
-                </RowLiCon>
-                <RowLiCon>
-                  <RowLi>
-                    <RowLiBut
-                      onClick={() => handleButtonClick("Move")}
-                      isActive={currentIndex === buttonToSlideIndex["Move"]}
-                    >
-                      <RowSpan>
-                        <RowReSpan></RowReSpan>
-                        الخدمة
-                      </RowSpan>
-                    </RowLiBut>
-                  </RowLi>
-                </RowLiCon>
-                <RowLiCon>
-                  <RowLi>
-                    <RowLiBut
-                      onClick={() => handleButtonClick("Focus")}
-                      isActive={currentIndex === buttonToSlideIndex["Focus"]}
-                    >
-                      <RowSpan>
-                        <RowReSpan></RowReSpan>
-                        الاسعار
-                      </RowSpan>
-                    </RowLiBut>
-                  </RowLi>
-                </RowLiCon>
-                <RowLiCon>
-                  <RowLi>
-                    <RowLiBut
-                      onClick={() => handleButtonClick("WakeUp")}
-                      isActive={currentIndex === buttonToSlideIndex["WakeUp"]}
-                    >
-                      <RowSpan>
-                        <RowReSpan></RowReSpan>
-                        التقديم
-                      </RowSpan>
-                    </RowLiBut>
-                  </RowLi>
-                </RowLiCon>
-              </RowLisCon>
+              <RowLisCon>{buttonComponents}</RowLisCon>
             </RowConFCon>
             <ColConFCon>
               <ColSubConFCon>
