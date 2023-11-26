@@ -31,7 +31,7 @@ export const MaWrapper = styled.div`
   height: 550px;
 
   @media screen and (max-width: 768px) {
-    height: 550px;
+    height: 500px;
   }
 `;
 
