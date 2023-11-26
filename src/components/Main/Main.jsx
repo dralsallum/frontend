@@ -10,6 +10,7 @@ import {
   MaInputSub,
   MaSubTwo,
   MaWrapper,
+  Button,
 } from "./Main.elements";
 import Medical from "../../assets/medical.png";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";

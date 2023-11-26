@@ -1,5 +1,27 @@
 import styled from "styled-components";
 
+export const Button = styled.button`
+  border-radius: 4px;
+  background: #166b9b;
+  white-space: nowrap;
+  padding: 10px 15px;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    transition: all 0.3s ease-out;
+    background: #fff;
+    background: #003c69;
+  }
+
+  @media screen and (max-width: 960px) {
+    width: 100%;
+  }
+`;
+
 export const MaWrapper = styled.div`
   direction: rtl;
   background: transparent linear-gradient(109deg, #0970b7, #4fbaeb) 0 0
