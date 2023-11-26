@@ -104,6 +104,7 @@ const Products = ({ cat, filters, sort }) => {
     };
 
     fetchProducts();
+    window.scrollTo(0, 0);
   }, [cat, currentPage, searchQuery]);
 
   const renderPagination = () => {
