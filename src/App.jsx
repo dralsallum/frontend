@@ -25,13 +25,11 @@ const App = () => {
         <Route path="/upload" element={<Upload />} />
         <Route path="/policy" element={<Policy />} />
         <Route path="/product/:category" element={<Product />} />
-        <Route path="/product/search" element={<Product search />} />
         <Route path="/main" element={<Something />} />
         <Route
           path="/signup"
           element={user ? <Navigate to="/" /> : <SignUp />}
         />
-        <Route path="/products/search" element={<Product />} />
       </Routes>
     </Router>
   );
