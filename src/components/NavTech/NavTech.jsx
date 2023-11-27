@@ -56,15 +56,31 @@ const NavTech = () => {
         <NotCon>
           <NotUl>
             <NotBot>
-              <NotBotAt>توظيف</NotBotAt>
+              <NotBotAt to={"/upload"}>توظيف</NotBotAt>
             </NotBot>
             <NotBot>
-              <NotBotAt to={"/home"}>البحث عن وظيفة</NotBotAt>
+              <NotBotAt to={"/upload"}>البحث عن وظيفة</NotBotAt>
             </NotBot>
             <hr />
             <NotBot>
-              <NotBotAt to={"/home"}>التمريض</NotBotAt>
+              <NotBotAt to={"/product/nurse"}>التمريض</NotBotAt>
             </NotBot>
+            <NotBot>
+              <NotBotAt to={"/product/physician"}>الاطباء</NotBotAt>
+            </NotBot>
+            <NotBot>
+              <NotBotAt to={"/product/dentist"}>اسنان</NotBotAt>
+            </NotBot>
+            <NotBot>
+              <NotBotAt to={"/product/technician"}>فني</NotBotAt>
+            </NotBot>
+            <NotBot>
+              <NotBotAt to={"/product/reception"}>استقبال</NotBotAt>
+            </NotBot>
+            <NotBot>
+              <NotBotAt to={"/product/management"}>ادارة</NotBotAt>
+            </NotBot>
+            <hr style={{ marginBottom: "6px" }} />
             <Button primary onClick={handleSignOut}>
               تسجيل الخروج
             </Button>
