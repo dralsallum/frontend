@@ -15,6 +15,7 @@ import {
 import Medical from "../../assets/medical.png";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 const Main = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -40,7 +41,16 @@ const Main = () => {
               <div>
                 <div>
                   <div>
-                    <Button>قدم الان</Button>
+                    <Link
+                      to="/upload"
+                      style={{
+                        textDecoration: "none",
+                        color: "inherit",
+                        width: "100%",
+                      }}
+                    >
+                      <Button>قدم الان</Button>
+                    </Link>
                     <MaInputCon>
                       <MaInputSub>
                         <MaBut type="submit">

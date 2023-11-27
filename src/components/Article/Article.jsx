@@ -27,14 +27,12 @@ const Article = () => {
             أفضل رعاية للمرضى. لذلك، نعمل بجد لتوفير الكفاءات الطبية التي تتناسب
             مع متطلباتكم وتلبي معايير الجودة العالية.
           </ArContainerFPara>
-          <Button>
-            <Link
-              to="/request"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              خدمة المستشفيات
-            </Link>
-          </Button>
+          <Link
+            to="/request"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <Button>خدمة المستشفيات</Button>
+          </Link>
         </ArSubContainerF>
       </ArContainerF>
       <ArContainerS>
