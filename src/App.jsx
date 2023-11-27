@@ -13,6 +13,7 @@ import Upload from "./pages/Upload";
 import Items from "./pages/Items";
 import Something from "./pages/Something";
 import Policy from "./pages/Policy";
+import Request from "./pages/Request";
 
 const App = () => {
   const user = useSelector((state) => state.user.currentUser);
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/product/:category/:productId" element={<Items />} />
         <Route path="/upload" element={<Upload />} />
+        <Route path="/request" element={<Request />} />
         <Route path="/policy" element={<Policy />} />
         <Route path="/product/:category" element={<Product />} />
         <Route path="/main" element={<Something />} />

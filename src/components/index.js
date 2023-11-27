@@ -7,6 +7,7 @@ export { default as Resume } from "./Resume/Resume";
 export { default as Slider } from "./Slider/Slider";
 export { default as Article } from "./Article/Article";
 export { default as Apply } from "./Apply/Apply";
+export { default as Hospitals } from "./Hospitals/Hospitals";
 export { default as Options } from "./Options/Options";
 export { default as SignForm } from "./SignForm/SignForm";
 export { default as Divider } from "./Divider/Divider";

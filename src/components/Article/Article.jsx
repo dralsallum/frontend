@@ -11,6 +11,7 @@ import {
   Button,
 } from "./Article.elements";
 import physician from "../../assets/arab.png";
+import { Link } from "react-router-dom";
 
 const Article = () => {
   return (
@@ -26,7 +27,14 @@ const Article = () => {
             أفضل رعاية للمرضى. لذلك، نعمل بجد لتوفير الكفاءات الطبية التي تتناسب
             مع متطلباتكم وتلبي معايير الجودة العالية.
           </ArContainerFPara>
-          <Button>خدمة المستشفيات</Button>
+          <Button>
+            <Link
+              to="/request"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              خدمة المستشفيات
+            </Link>
+          </Button>
         </ArSubContainerF>
       </ArContainerF>
       <ArContainerS>
