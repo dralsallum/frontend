@@ -81,6 +81,11 @@ const NavTech = () => {
               <NotBotAt to={"/product/management"}>ادارة</NotBotAt>
             </NotBot>
             <hr style={{ marginBottom: "6px" }} />
+            <NotBot>
+              <NotBotAt to={"/signup"}>
+                <Button>تسجيل الدخول</Button>
+              </NotBotAt>
+            </NotBot>
             <Button primary onClick={handleSignOut}>
               تسجيل الخروج
             </Button>
