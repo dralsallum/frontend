@@ -2,23 +2,24 @@ import styled from "styled-components";
 
 export const Button = styled.button`
   border-radius: 4px;
-  background: #166b9b;
+  background: #176b9b;
   white-space: nowrap;
   padding: 10px 15px;
   color: #fff;
   font-size: 14px;
   outline: none;
-  border: none;
+  border: 1px solid #fff;
   cursor: pointer;
+  width: 80%;
 
   &:hover {
     transition: all 0.3s ease-out;
     background: #fff;
-    background: #003c69;
+    background: #000;
   }
 
-  @media screen and (max-width: 960px) {
-    width: 100%;
+  @media screen and (max-width: 768px) {
+    width: 80%;
   }
 `;
 
@@ -97,6 +98,7 @@ export const MaHe = styled.h1`
   }
 `;
 export const MaInputCon = styled.div`
+  display: none;
   width: 100%;
   padding: 8px;
   background: #fff 0 0 no-repeat padding-box;

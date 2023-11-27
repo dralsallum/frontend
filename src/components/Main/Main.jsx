@@ -40,32 +40,31 @@ const Main = () => {
               <div>
                 <div>
                   <div>
-                    <form onSubmit={handleSearchSubmit}>
-                      <MaInputCon>
-                        <MaInputSub>
-                          <MaBut type="submit">
-                            <i>
-                              <FontAwesomeIcon
-                                icon={faSearch}
-                                style={{
-                                  display: "block",
-                                  color: "2790cd",
-                                  height: "24px",
-                                  width: "24px",
-                                }}
-                              />
-                            </i>
-                          </MaBut>
-                          <label htmlFor=""></label>
-                          <MaInput
-                            type="text"
-                            placeholder="ابحث عن وظيفة بالقطاع الصحي"
-                            value={searchTerm} // Controlled component
-                            onChange={handleSearchChange} // New event handler
-                          />
-                        </MaInputSub>
-                      </MaInputCon>
-                    </form>
+                    <Button>قدم الان</Button>
+                    <MaInputCon>
+                      <MaInputSub>
+                        <MaBut type="submit">
+                          <i>
+                            <FontAwesomeIcon
+                              icon={faSearch}
+                              style={{
+                                display: "block",
+                                color: "2790cd",
+                                height: "24px",
+                                width: "24px",
+                              }}
+                            />
+                          </i>
+                        </MaBut>
+                        <label htmlFor=""></label>
+                        <MaInput
+                          type="text"
+                          placeholder="ابحث عن وظيفة بالقطاع الصحي"
+                          value={searchTerm} // Controlled component
+                          onChange={handleSearchChange} // New event handler
+                        />
+                      </MaInputSub>
+                    </MaInputCon>
                   </div>
                   <div></div>
                   <div></div>
