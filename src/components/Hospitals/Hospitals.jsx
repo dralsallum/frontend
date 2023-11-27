@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   AdCon,
   AdConSec,
@@ -301,7 +301,7 @@ const Hospitals = () => {
                             {!isMasterOneVisible && (
                               <MasterTwo>
                                 <HiWraOn>
-                                  <HiOnLa htmlFor="">ايميل *</HiOnLa>
+                                  <HiOnLa htmlFor="">اسم المستشفى *</HiOnLa>
                                   <HiOnIn
                                     id="email"
                                     type="email"
@@ -327,11 +327,11 @@ const Hospitals = () => {
                                   <HiOnSp></HiOnSp>
                                 </HiWraOn>
                                 <HiWraOn>
-                                  <HiTwLa htmlFor="">الاسم الاول *</HiTwLa>
+                                  <HiTwLa htmlFor="">اسم المستشفى *</HiTwLa>
                                   <HiOnIn
                                     id="firstName"
                                     type="text"
-                                    placeholder="الاسم الاول"
+                                    placeholder="اسم المستشفى "
                                     value={firstName}
                                     onChange={(e) =>
                                       handleInputChange(e, setFirstName)
@@ -340,11 +340,11 @@ const Hospitals = () => {
                                   <HiOnSp></HiOnSp>
                                 </HiWraOn>
                                 <HiWraOn>
-                                  <HiTwLa htmlFor="">اسم العائلة *</HiTwLa>
+                                  <HiTwLa htmlFor="">باي مدينة *</HiTwLa>
                                   <HiOnIn
                                     id="LastName"
                                     type="text"
-                                    placeholder="اسم العائلة"
+                                    placeholder="باي مدينة"
                                     value={lastName}
                                     onChange={(e) =>
                                       handleInputChange(e, setLastName)
@@ -353,7 +353,7 @@ const Hospitals = () => {
                                   <HiOnSp></HiOnSp>
                                 </HiWraOn>
                                 <HiWraOn>
-                                  <HiFiLa>المهنة *</HiFiLa>
+                                  <HiFiLa> المهنة *</HiFiLa>
                                   <HiFiSel
                                     id="profession"
                                     value={profession}
@@ -361,7 +361,9 @@ const Hospitals = () => {
                                       handleSelectChange(e, setProfession)
                                     }
                                   >
-                                    <HiFiOp value="">-- اختر المهنة --</HiFiOp>
+                                    <HiFiOp value="">
+                                      -- اختر المهنة المطلوبة --
+                                    </HiFiOp>
                                     {Object.keys(professionOptions).map(
                                       (key) => (
                                         <HiFiOp key={key} value={key}>
@@ -382,7 +384,9 @@ const Hospitals = () => {
                                     }
                                     disabled={!profession} // Disable if profession is not selected
                                   >
-                                    <HiFiOp value="">-- اختر الشهادة --</HiFiOp>
+                                    <HiFiOp value="">
+                                      -- اختر الشهادة المطلوبة --
+                                    </HiFiOp>
                                     {disciplineOptions.map((option) => (
                                       <HiFiOp key={option} value={option}>
                                         {option}
@@ -402,7 +406,9 @@ const Hospitals = () => {
                                     }
                                     disabled={!discipline} // Disable if discipline is not selected
                                   >
-                                    <HiFiOp value="">-- اختر التخصص --</HiFiOp>
+                                    <HiFiOp value="">
+                                      -- اختر التخصص المطلوبة --
+                                    </HiFiOp>
                                     {specialtyOptions.map((option) => (
                                       <HiFiOp key={option} value={option}>
                                         {option}
@@ -421,7 +427,9 @@ const Hospitals = () => {
                                       handleSelectChange(e, setOtherSpecialty)
                                     }
                                   >
-                                    <HiFiOp value="">-- تخصصات اخرى --</HiFiOp>
+                                    <HiFiOp value="">
+                                      -- تخصصات اخرى مطلوبة --
+                                    </HiFiOp>
                                     <HiFiOp value="nursing">تمريض</HiFiOp>
                                     <HiFiOp value="allies">استقبال</HiFiOp>
                                     <HiFiOp value="physician">طبيب</HiFiOp>
@@ -441,7 +449,7 @@ const Hospitals = () => {
                                       (بما في ذلك المكالمات التي تحتوي على محتوى
                                       مُسجل مُسبقًا) من ونيابةً عن اللميديكال،
                                       والشركات التابعة لها."
-                                      <a href="">اريني المزيد</a>
+                                      <Link to={"/policy"}>اريني المزيد</Link>
                                     </AgPa>
                                   </AgCon>
                                 </HiWraOn>
