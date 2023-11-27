@@ -64,30 +64,30 @@ const SignForm = () => {
           <LoginSignSubHeader>اسم المستخدم</LoginSignSubHeader>
           <LoginSignInput
             name="username"
-            placeholder="username"
+            placeholder="اسم المستخدم"
             onChange={handleChange}
           />
           <LoginSignSubHeader>ايميل</LoginSignSubHeader>
           <LoginSignInput
             name="email"
-            placeholder="email"
+            placeholder="الايميل"
             onChange={handleChange}
           />
           <LoginSignSubHeader>الرقم السري</LoginSignSubHeader>
           <LoginSignInput
             type="password"
             name="password"
-            placeholder="password"
+            placeholder="الباسورد"
             onChange={handleChange}
           />
           <LoginSignSubHeader>تاكيد الرقم السري</LoginSignSubHeader>
           <LoginSignInput
             type="password"
             name="confirmPassword"
-            placeholder="confirmPassword"
+            placeholder="تاكيد الباسورد"
             onChange={handleChange}
           />
-          <SignButton>تسحيل حساب جديد</SignButton>
+          <SignButton>تسجيل حساب جديد</SignButton>
         </SignUpForm>
         <LoginSignPara>
           بتسجيل الدخول، أنت توافق على شروط استخدام ١٢انجليش. يُرجى الاطلاع على
